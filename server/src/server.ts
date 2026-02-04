@@ -16,6 +16,17 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+// Serve Frontend Static Files
+const clientDistPath = path.join(__dirname, '../../client/dist');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api') && !req.path.startsWith('/uploads')) {
+      res.sendFile(path.join(clientDistPath, 'index.html'));
+    }
+  });
+}
+
 // Ensure upload dir exists
 if (!fs.existsSync(path.join(__dirname, '../uploads'))) {
   fs.mkdirSync(path.join(__dirname, '../uploads'));

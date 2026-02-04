@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3002/api';
+const API_URL = '/api';
 
 export const scanImage = async (file: File) => {
   const formData = new FormData();

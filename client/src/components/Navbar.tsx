@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Moon, Sun, Languages, History, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,7 +7,7 @@ interface NavbarProps {
   toggleDarkMode: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
+const Navbar = ({ darkMode, toggleDarkMode }: NavbarProps) => {
   const { t, i18n } = useTranslation();
 
   const toggleLang = () => {

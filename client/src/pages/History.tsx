@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getHistory } from '../api';
 import { useTranslation } from 'react-i18next';
 
-const History: React.FC = () => {
+const History = () => {
   const { t } = useTranslation();
   const [scans, setScans] = useState<any[]>([]);
 

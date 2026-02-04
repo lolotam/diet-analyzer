@@ -1,10 +1,10 @@
-import React, { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import { useTranslation } from 'react-i18next';
 import { Camera, Upload, Loader2, Utensils } from 'lucide-react';
 import { scanImage } from '../api';
 
-const Home: React.FC = () => {
+const Home = () => {
   const { t } = useTranslation();
   const [image, setImage] = useState<string | null>(null);
   const [file, setFile] = useState<File | null>(null);
